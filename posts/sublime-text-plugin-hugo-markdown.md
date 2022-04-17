@@ -24,10 +24,10 @@ draft: true
 
 #### 借鉴文章
 
-- ![Sublime Text 插件开发流程](https://www.jianshu.com/p/e2558ee1d503)
-- ![Python 日期和时间](https://www.runoob.com/python/python-date-time.html)
-- ![sublime text 插件 -- 获取文件名到剪贴板](https://www.likecs.com/show-204661998.html)
-- ![Python 字符串分割的方法](https://www.cnblogs.com/ShaunChen/p/6201129.html)
+- [Sublime Text 插件开发流程][https://www.jianshu.com/p/e2558ee1d503]
+- [Python 日期和时间][https://www.runoob.com/python/python-date-time.html]
+- [sublime text 插件 -- 获取文件名到剪贴板][https://www.likecs.com/show-204661998.html]
+- [Python 字符串分割的方法][https://www.cnblogs.com/ShaunChen/p/6201129.html]
 
 
 #### 插件代码
