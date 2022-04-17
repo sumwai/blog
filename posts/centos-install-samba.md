@@ -1,3 +1,7 @@
+---
+title: Centos安装Samba服务
+---
+
 #### Samba端口号
 
 - 139
@@ -188,6 +192,6 @@ sudo systemctl enable smb
 
 #### Windows挂载
 
-<kbd>文件管理器</kbd> -> 右键点击<kbd>网络</kbd> -> <kbd>映射网络驱动器</kbd> -> 输入<kbd>\\\\\\\\192.168.1.150\\\\wwwroot</kbd> -> 完成
+<kbd>文件管理器</kbd> -> 右键点击<kbd>网络</kbd> -> <kbd>映射网络驱动器</kbd> -> 输入<kbd>\\\\192.168.1.150\\wwwroot</kbd> -> 完成
 
 > 当弹出账号密码时，输入账号：www，密码：**使用 `smbpasswd` 设置的密码**
