@@ -42,7 +42,7 @@ scp ~/.ssh/id_rsa.pub root@aaa.com:/root/.ssh/authorized_keys
 > Windows操作首先需要进入用户主目录，即`C:\Users\[用户名]`，再使用以下命令即可
 
 ```bash
-scp .\.ssh\id_rsa.pub root@sumwai.cn:/root/.ssh/authorized_keys
+scp .\.ssh\id_rsa.pub root@aaa.cn:/root/.ssh/authorized_keys
 ```
 
 ### 配置完成
