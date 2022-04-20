@@ -1,5 +1,7 @@
 ---
 title: Centos安装Samba服务
+date: 2022-04-17T15:30:18+08:00
+
 ---
 
 #### Samba端口号
@@ -11,7 +13,6 @@ title: Centos安装Samba服务
 
 
 ```
-shell
 sudo yum -y install samba
 ```
 
@@ -20,7 +21,6 @@ sudo yum -y install samba
 
 
 ```
-shell
 sudo vim /etc/samba/smb.conf
 ```
 
@@ -90,7 +90,6 @@ sudo smbpasswd -a www
 
 
 ```
-bash
 sudo setenforce 0
 ```
 
@@ -98,7 +97,6 @@ sudo setenforce 0
 #### 关闭防火墙
 
 ```
-bash
 sudo systemctl stop firewalld
 ```
 
@@ -106,7 +104,6 @@ sudo systemctl stop firewalld
 #### 测试配置文件
 
 ```
-bash
 sudo testparm -s
 ```
 
@@ -168,7 +165,6 @@ Server role: ROLE_STANDALONE
 #### 启动Samba服务
 
 ```
-bash
 sudo systemctl start smb
 ```
 
@@ -176,7 +172,6 @@ sudo systemctl start smb
 #### 重启服务
 
 ```
-bash
 sudo systemctl restart smb
 ```
 
@@ -185,7 +180,6 @@ sudo systemctl restart smb
 
 
 ```
-bash
 sudo systemctl enable smb
 ```
 
