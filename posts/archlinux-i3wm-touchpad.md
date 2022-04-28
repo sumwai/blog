@@ -1,6 +1,6 @@
 ---
 title: archlinux i3wm touchpad config
-time: 2022-04-28T19:25:32+08:00
+date: 2022-04-28T19:25:32+08:00
 draft: true
 ---
 
