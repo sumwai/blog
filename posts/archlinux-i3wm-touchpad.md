@@ -6,13 +6,13 @@ draft: true
 
 ### Install libinput
 
-```
+```shell
 sudo pacman -Syy libinput xf86-input-libinput xorg-xinput
 ```
 
 ### Show Touchpad devices 
 
-```
+```shell
 sudo xinput list | grep Touchpad
 ```
 
@@ -22,7 +22,7 @@ sudo xinput list | grep Touchpad
 
 ### Show List Props
 
-```
+```shell
 sudo xinput list-props 12
 ```
 
@@ -111,13 +111,58 @@ sudo xinput list-props 12
 #### Natural Scrolling
 > libinput Natural Scrolling Enabled (323):	1
 
-```
+```shell
 xinput set-prop 12 323 1
 ```
 
 #### Tap to click
 > libinput Tapping Enabled (344):	1
 
-```
+```shell
 xinput set-prop 12 344 1
+```
+
+### Config Set
+
+If you use the `xinput set-prop xxx`, It will not work when you reboot your device. so, you need to change the config file to start it. If you need all settings, see [libinput - ArchWiki](https://wiki.archlinux.org/title/libinput)
+
+
+first, you need copy the sample config file, it is at  `/usr/share/X11/xorg.conf.d/40-libinput.conf` and you  should copy it to `/etc/X11/xorg.conf.d/40-libinput.conf`
+
+there is the command
+```shell
+sudo cp /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+```
+
+then you should change the config file.
+```shell
+sudo vim /etc/X11/xorg.conf.d/40-libinput.conf
+```
+
+find the touchpad section, like this
+
+```yaml
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+EndSection
+```
+
+change it.
+```yaml
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        # enable tap to click
+        Option "Tapping" "on"
+        # enable NaturalScrolling
+      	Option "NaturalScrolling" "true"
+        # egde Scroll
+      	Option "ScrollMethod" "edge"
+        
+        Driver "libinput"
+EndSection
 ```
